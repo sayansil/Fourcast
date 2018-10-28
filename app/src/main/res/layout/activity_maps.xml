@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        xmlns:sothree="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/sliding_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        sothree:umanoPanelHeight="110dp"
+        sothree:umanoShadowHeight="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                map:uiCompass="false"
+                tools:context=".MapsActivity" />
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                map:cardElevation="18dp"
+                android:padding="8dp"
+                android:id="@+id/searchcard"
+                android:layout_margin="1dp"
+                map:cardUseCompatPadding="true"
+                map:cardCornerRadius="0dp">
+
+                <fragment
+                    android:id="@+id/place_autocomplete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+                    />
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                map:cardElevation="4dp"
+                android:layout_marginEnd="8dp"
+                map:cardUseCompatPadding="true"
+                map:cardCornerRadius="21dp"
+                android:layout_below="@id/searchcard"
+                android:padding="12dp"
+                android:layout_alignParentEnd="true">
+
+
+                <ImageButton
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:id="@+id/mylocation"
+                    android:scaleType="fitCenter"
+                    android:background="@drawable/t_bg"
+                    android:padding="3dp"
+                    android:visibility="gone"
+                    android:src="@drawable/ic_my_location_black"/>
+
+            </android.support.v7.widget.CardView>
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_expand_less_black"/>
+
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- PM 25-->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="8dp">
+
+                            <ImageButton
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:scaleType="fitCenter"
+                                android:id="@+id/pm25b"
+                                android:background="@android:color/transparent"
+                                android:src="@drawable/ic_pm25"/>
+
+                            <TextView
+                                android:id="@+id/poll_pm25"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textSize="10sp"
+                                android:text="--"/>
+                        </LinearLayout>
+
+                        <!-- PM 10 -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="8dp">
+
+                            <ImageButton
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:id="@+id/pm10b"
+                                android:background="@android:color/transparent"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_pm10"/>
+
+                            <TextView
+                                android:id="@+id/poll_pm10"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textSize="10sp"
+                                android:text="--"/>
+                        </LinearLayout>
+
+                        <!-- CO -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="8dp">
+
+                            <ImageButton
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:scaleType="fitCenter"
+                                android:id="@+id/cob"
+                                android:background="@android:color/transparent"
+                                android:src="@drawable/ic_co"/>
+
+                            <TextView
+                                android:id="@+id/poll_co"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textSize="10sp"
+                                android:text="--"/>
+                        </LinearLayout>
+
+                        <!-- NO2 -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="8dp">
+
+                            <ImageButton
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:scaleType="fitCenter"
+                                android:id="@+id/no2b"
+                                android:background="@android:color/transparent"
+                                android:src="@drawable/ic_no2"/>
+
+                            <TextView
+                                android:id="@+id/poll_no2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textSize="10sp"
+                                android:text="--"/>
+                        </LinearLayout>
+
+                        <!-- O3 -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="8dp">
+
+                            <ImageButton
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:scaleType="fitCenter"
+                                android:background="@android:color/transparent"
+                                android:id="@+id/o3b"
+                                android:src="@drawable/ic_o3"/>
+
+                            <TextView
+                                android:id="@+id/poll_o3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textSize="10sp"
+                                android:text="--"/>
+                        </LinearLayout>
+
+                        <!-- SO2 -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="8dp">
+
+                            <ImageButton
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:scaleType="fitCenter"
+                                android:background="@android:color/transparent"
+                                android:id="@+id/so2b"
+                                android:src="@drawable/ic_so2"/>
+
+                            <TextView
+                                android:id="@+id/poll_so2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textSize="10sp"
+                                android:text="--"/>
+                        </LinearLayout>
+
+                        <!-- Pressure -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="8dp">
+
+                            <ImageButton
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:scaleType="fitCenter"
+                                android:background="@android:color/transparent"
+                                android:src="@drawable/ic_pressure"/>
+
+                            <TextView
+                                android:id="@+id/poll_p"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textSize="10sp"
+                                android:text="--"/>
+                        </LinearLayout>
+
+                        <!-- Humidity -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="8dp">
+
+                            <ImageButton
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:scaleType="fitCenter"
+                                android:background="@android:color/transparent"
+                                android:src="@drawable/ic_humid"/>
+
+                            <TextView
+                                android:id="@+id/poll_h"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textSize="10sp"
+                                android:text="--"/>
+                        </LinearLayout>
+
+                        <!-- Temperature -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="8dp">
+
+                            <ImageButton
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:scaleType="fitCenter"
+                                android:background="@android:color/transparent"
+                                android:src="@drawable/ic_temperature"/>
+
+                            <TextView
+                                android:id="@+id/poll_t"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textSize="10sp"
+                                android:text="--"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                map:cardElevation="4dp"
+                                map:cardUseCompatPadding="true"
+                                map:cardCornerRadius="4dp">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="12dp"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/bigNum"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="80sp"
+                                        android:textStyle="normal"
+                                        android:text="--"/>
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+                                        <ImageView
+                                            android:layout_width="70dp"
+                                            android:layout_height="70dp"
+                                            android:id="@+id/bigIcon"
+                                            android:src="@drawable/ic_pm25"
+                                            android:gravity="center_vertical|end"
+                                            android:layout_gravity="end"
+                                            android:scaleType="fitCenter"/>
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/currPoll"
+                                            android:layout_gravity="center_vertical"
+                                            android:gravity="center_vertical|end"
+                                            android:textSize="12sp"
+                                            android:text="Particulate Matter\n(2.5\u00B5m)"/>
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </android.support.v7.widget.CardView>
+
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                map:cardElevation="4dp"
+                                map:cardUseCompatPadding="true"
+                                map:cardCornerRadius="4dp">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="12dp"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textStyle="normal"
+                                            android:gravity="center_vertical|start"
+                                            android:textColor="#9E9E9E"
+                                            android:text="Air Quality Index"/>
+
+                                        <TextView
+                                            android:id="@+id/goodbad"
+                                            android:layout_width="0dp"
+                                            android:layout_weight="1"
+                                            android:layout_height="wrap_content"
+                                            android:textStyle="bold"
+                                            android:gravity="center_vertical|start"
+                                            android:textColor="#76FF03"
+                                            android:layout_marginStart="8dp"
+                                            android:text="--"/>
+
+                                        <TextView
+                                            android:id="@+id/aqiTxt"
+                                            android:layout_width="wrap_content"
+                                            android:background="@drawable/chip_bg"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_vertical"
+                                            android:gravity="center_vertical|end"
+                                            android:paddingTop="4dp"
+                                            android:paddingBottom="4dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingStart="8dp"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold"
+                                            android:text="--"/>
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="bold"
+                                        android:id="@+id/myplace"
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:textSize="16sp"
+                                        android:text="--"/>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <LinearLayout
+                                            android:layout_width="0dp"
+                                            android:layout_weight="1"
+                                            android:layout_height="match_parent"
+                                            android:orientation="vertical">
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="#9E9E9E"
+                                                android:text="Humidity"/>
+
+                                            <TextView
+                                                android:id="@+id/text_h"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:textStyle="bold"
+                                                android:textSize="20sp"
+                                                android:text="-- %"/>
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="0dp"
+                                            android:layout_weight="1"
+                                            android:layout_height="match_parent"
+                                            android:orientation="vertical">
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:gravity="center_horizontal"
+                                                android:textColor="#9E9E9E"
+                                                android:text="Temperature"/>
+
+                                            <TextView
+                                                android:id="@+id/text_t"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:gravity="center_horizontal"
+                                                android:textStyle="bold"
+                                                android:textSize="20sp"
+                                                android:text="-- °C"/>
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="0dp"
+                                            android:layout_weight="1"
+                                            android:layout_height="match_parent"
+                                            android:orientation="vertical">
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="#9E9E9E"
+                                                android:gravity="end"
+                                                android:text="Pressure"/>
+
+                                            <TextView
+                                                android:id="@+id/text_p"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:gravity="end"
+                                                android:textStyle="bold"
+                                                android:textSize="20sp"
+                                                android:text="-- mbr"/>
+                                        </LinearLayout>
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </android.support.v7.widget.CardView>
+
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                map:cardElevation="4dp"
+                                map:cardUseCompatPadding="true"
+                                map:cardCornerRadius="4dp">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="12dp"
+                                    android:background="#84FFFF"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="bold"
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:textSize="18sp"
+                                        android:text="About the Pollutant"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="normal"
+                                        android:id="@+id/inff"
+                                        android:textSize="12sp"
+                                        android:text="@string/pm25_info"/>
+                                </LinearLayout>
+                            </android.support.v7.widget.CardView>
+
+                            <android.support.v7.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                map:cardElevation="4dp"
+                                map:cardUseCompatPadding="true"
+                                map:cardCornerRadius="4dp"
+                                android:layout_marginBottom="16dp">
+                                <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="12dp"
+                                android:background="#FFFF8D"
+                                android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="bold"
+                                        android:layout_marginTop="16dp"
+                                        android:layout_marginBottom="8dp"
+                                        android:textSize="18sp"
+                                        android:text="Precautionary Measures"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="normal"
+                                        android:id="@+id/precss"
+                                        android:textSize="12sp"
+                                        android:text="@string/pm25_prec"/>
+
+                                </LinearLayout>
+                            </android.support.v7.widget.CardView>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </android.support.v4.widget.NestedScrollView>
+            </LinearLayout>
+        </FrameLayout>
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+
+
+
+
+
+</RelativeLayout>

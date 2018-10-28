@@ -1,0 +1,93 @@
+<resources>
+    <string name="app_name">Fourcast</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="token">36a0d86cd5198cc6b37caa6d481a66c0781bdba3</string>
+
+    <string name="pm25_info">
+        PM2.5 refers to atmospheric particulate matter (PM) that have a diameter of less than 2.5 micrometers, which is about 3% the diameter of a human hair.\n
+        They include power plants, motor vehicles, airplanes, residential wood burning etc.
+        Owing to their minute size, particles smaller than 2.5 micrometers are able to penetrate deep into the lungs and some may even enter the circulatory system.\n\n
+
+        A recent study suggests that long-term exposure to PM2.5 may lead to plaque deposits in arteries,
+        causing vascular inflammation and a hardening of the arteries which can eventually lead to heart attack and stroke.
+    </string>
+    <string name="pm25_prec">
+        \u2022 Stay indoor and close all windows and openings that allow polluted air to enter, when possible.\n\n
+        \u2022 Install an air purifier that is equipped with a HEPA filter. \n\n
+        \u2022 When most or all windows are closed, do not burn candle, incense or operate devices that emit smoke.\n\n
+        \u2022 Boost your body’s resistance against PM2.5 by increasing your intake of Vitamin C and E.\n\n
+        \u2022 If you must go outdoor, use a N95 or higher face mask.
+    </string>
+
+    <string name="pm10_info">
+        PM10 is particulate matter 10 micrometers or less in diameter. By way of comparison, a human hair is about 100 micrometres, so roughly 10 fine particles could be placed on its width.
+        Particles in the PM10 size range are commonly present in air and may be drawn into the body with every breath. In the lungs particles can have a direct physical effect and/or be absorbed
+        into the blood. Airborne particles, may also may be deposited in the mouth, throat or nose and be ingested.\n\n
+
+        Sources include crushing or grinding operations and dust stirred up by vehicles on roads.
+    </string>
+    <string name="pm10_prec">
+        \u2022 Setting up public monitoring groups through official channels.\n\n
+        \u2022 Reducing the effective inhaled dose of air pollution by staying away from dusty roads and highways.\n\n
+        \u2022 Using personal protective equipment like respirators.\n\n
+        \u2022 Air quality management and regular reports for work and indoor spaces.\n\n
+    </string>
+
+    <string name="o3_info">
+        Tropospheric, or ground level ozone, is not emitted directly into the air, but is created by chemical reactions between oxides of nitrogen (NOx) and volatile organic compounds (VOC).\n
+        Ozone at ground level is a harmful air pollutant, and can trigger a variety of health problems including chest pain, coughing, throat irritation, and airway inflammation.\n
+        It also can reduce lung function and harm lung tissue. Ozone can worsen bronchitis, emphysema, and asthma, leading to increased medical care.\n\n
+        People most at risk from breathing air containing ozone include people with asthma, children, older adults, and people who are active outdoors, especially outdoor workers.\n
+        Ozone is also the main ingredient in “smog."
+    </string>
+    <string name="o3_prec">
+        \u2022 Use appliances with higher Energy Star ratings at homes and offices.\n\n
+        \u2022 On very high levels of Ozone, reduce errands and combine trips. Walk instead of drive whenever possible.\n\n
+        \u2022 Avoid leaving your automobile idle while running for too long.\n\n
+        \u2022 Avoid burning leaves, trash, and other materials.
+    </string>
+
+    <string name="co_info">
+        Carbon monoxide (CO)—a colorless, odorless, tasteless, and toxic air pollutant—is produced in the incomplete combustion of carbon-containing fuels,
+        such as gasoline, natural gas, oil, coal, and wood.\n
+        Breathing the high concentrations of CO typical of a polluted environment leads to reduced oxygen (O2) transport by hemoglobin and has health effects
+        that include headaches, increased risk of chest pain for persons with heart disease, and impaired reaction timing.
+    </string>
+    <string name="co_prec">
+        \u2022 Avoid burning charcoal inside a house, garage, vehicle, or tent, including in a fireplace.\n\n
+        \u2022 Avoid using unvented gas, propane, or kerosene heaters in enclosed spaces, especially sleeping areas.\n\n
+        \u2022 Inspect the exhaust system of each fuel burning appliance every year, including chimneys, flues, and vents. Check for blockage, holes, and disconnections.\n\n
+        \u2022 Do not leave the rear window or tailgate of a vehicle open while driving.\n\n
+        \u2022 Install only CO alarms that meet the UL (Underwriter Laboratories) 2034 standards.
+    </string>
+
+    <string name="no2_info">
+        Nitrogen dioxide primarily gets in the air from the burning of fuel. It forms from emissions from cars, trucks and buses, power plants, and off-road equipment.\n
+        Breathing air with a high concentration of NO2 can irritate airways in the human respiratory system. \n
+        Such exposures over short periods can aggravate respiratory diseases, particularly asthma, leading to further respiratory complications. Longer exposures to elevated concentrations
+        of NO2 may contribute to the development of asthma and potentially increase susceptibility to respiratory infections. People with asthma, as well as children and
+        the elderly are generally at greater risk for the health effects of NO2.
+    </string>
+    <string name="no2_prec">
+        \u2022 While using a gas stove, it is advised to also use ventilation.\n\n
+        \u2022 It is important to keep gas stoves and heaters in good repair so they are not polluting extra NO2.\n\n
+        \u2022 You can also prevent NO2 exposure by avoiding cigarette smoking and not idling your car whenever possible.
+    </string>
+
+    <string name="so2_info">
+        The largest source of SO2 in the atmosphere is the burning of fossil fuels by power plants and other industrial facilities. Smaller sources of SO2 emissions include: industrial\n
+        processes such as extracting metal from ore; natural sources such as volcanoes; and locomotives, ships and other vehicles and heavy equipment that burn fuel with a high sulfur content.\n\n
+
+        Short-term exposures to SO2 can harm the human respiratory system and make breathing difficult. Children, the elderly, and those who suffer from asthma are particularly sensitive to effects of SO2.
+        SO2 can react with other compounds in the atmosphere to form small particles. These particles contribute to particulate matter (PM) pollution: particles may penetrate deeply into
+        sensitive parts of the lungs and cause additional health problems.
+    </string>
+    <string name="so2_prec">
+        \u2022 Avoid food with sulfer preservatives.\n\n
+        \u2022 Stay away from sites of sulfur or coal combustion.
+    </string>
+
+    <string name="title_activity_splash">Fourcast</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>
