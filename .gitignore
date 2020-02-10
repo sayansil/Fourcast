@@ -7,3 +7,7 @@
 .externalNativeBuild
 .idea/*
 google_maps_api.xml
+app/src/debug/*
+app/src/test/*
+app/src/release/*
+app/src/androidTest/*
